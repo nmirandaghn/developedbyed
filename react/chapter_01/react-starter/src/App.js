@@ -1,14 +1,15 @@
 import React from "react";
+import TweetList from "./components/TweetList";
+import CreateTweet from "./components/CreateTweet";
 
 function App() {
-  const items = [1, 2, 3, 4];
-  let items2 = items.map((x) => x ** 2);
-  console.log(items2);
-
+  const name = "Nelson Miranda";
+  const message = "Just like that";
   return (
     <div className="box">
       <h1>Hello React</h1>
-      <button>Submit</button>
+      <CreateTweet />
+      <TweetList name={name} message={message} />
     </div>
   );
 }
