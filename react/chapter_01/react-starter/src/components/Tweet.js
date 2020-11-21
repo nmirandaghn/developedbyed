@@ -1,8 +1,8 @@
 import React from "react";
 
-const Tweet = ({ name, message }) => {
+const Tweet = ({ name, tweet, tweets, setTweets }) => {
   const deleteHandler = () => {
-    alert("Delete");
+    setTweets(tweets.filter((x) => x !== tweet));
   };
 
   const likeHandler = () => {
@@ -12,7 +12,7 @@ const Tweet = ({ name, message }) => {
   return (
     <div className="tweet">
       <h2>{name}</h2>
-      <h3>{message}</h3>
+      <h3>{tweet}</h3>
       <button onClick={deleteHandler}>Delete</button>
       <button onClick={likeHandler}>Like</button>
     </div>
