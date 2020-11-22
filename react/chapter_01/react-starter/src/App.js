@@ -8,7 +8,7 @@ function App() {
   const [tweets, setTweets] = useState([]);
 
   return (
-    <div className="box">
+    <div>
       <h1>Hello {name}</h1>
       <CreateTweet
         textInput={textInput}

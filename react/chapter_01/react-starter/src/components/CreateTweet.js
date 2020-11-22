@@ -13,7 +13,7 @@ const CreateTweet = ({ textInput, setTextInput, tweets, setTweets }) => {
   };
 
   return (
-    <div className="tweet">
+    <div>
       <form onSubmit={submitTweetHandler}>
         <textarea
           value={textInput}
