@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TweetList from "./components/TweetList";
 import CreateTweet from "./components/CreateTweet";
 
@@ -6,6 +6,10 @@ function App() {
   const name = "Nelson Miranda";
   const [textInput, setTextInput] = useState("");
   const [tweets, setTweets] = useState([]);
+
+  useEffect(() => {
+    console.log("Hello");
+  }, [textInput]);
 
   return (
     <div>
