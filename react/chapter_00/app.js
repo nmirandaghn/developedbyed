@@ -40,6 +40,8 @@ const users = [
   { name: "Suni", age: 5 },
   { name: "Nelson", age: 10 },
   { name: "Mauricio", age: 5 }
+  { name: "Nelson Mauricio", age: 45 }
+  { name: "Suni Valeska", age: 42 }
 ];
 
 const modifiedUsers = users.map(x => `${x.name} + ${x.age}`)
