@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
@@ -15,16 +15,12 @@ const Player = ({
   setSongInfo,
   songInfo,
 }) => {
-  const [playControl, setPlayControl] = useState(faPlay);
-
   // Event Handlers
   const playSongHandler = () => {
     if (isPlaying) {
       audioRef.current.pause();
-      setPlayControl(faPlay);
     } else {
       audioRef.current.play();
-      setPlayControl(faPause);
     }
     setIsPlaying(!isPlaying);
   };
@@ -43,12 +39,12 @@ const Player = ({
         <p>{getTime(songInfo.currentTime)}</p>
         <input
           min={0}
-          max={songInfo.duration}
+          max={songInfo.duration || 0}
           value={songInfo.currentTime}
           type="range"
           onChange={dragHandler}
         />
-        <p>{getTime(songInfo.duration)}</p>
+        <p>{getTime(songInfo.duration || 0)}</p>
       </div>
       <div className="play-control">
         <FontAwesomeIcon className="skip-back" size="2x" icon={faAngleLeft} />
@@ -56,7 +52,7 @@ const Player = ({
           onClick={playSongHandler}
           className="play"
           size="2x"
-          icon={playControl}
+          icon={isPlaying ? faPause : faPlay}
         />
         <FontAwesomeIcon
           className="skip-forward"
